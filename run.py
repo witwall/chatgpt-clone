@@ -2,11 +2,13 @@ from server.app     import app
 from server.errors  import *
 from server.website import Website
 from server.backend import Backend_Api
+import os
 
 if __name__ == '__main__':
+    port = int(os.getenv("PORT", default="1337"))
     config = {
         'host' : '0.0.0.0',
-        'port' : 1337,
+        'port' : port,
         'debug': False
     }
     
@@ -27,4 +29,4 @@ if __name__ == '__main__':
         )
     
     app.run(**config)
-    print('running on port 1337')
+    print(f'running on port {port}')
