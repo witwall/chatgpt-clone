@@ -11,7 +11,7 @@ def method_not_allowed(e):
     return Response('403: forbidden', 403)
 
 @app.errorhandler(429)
-def method_not_allowed(e):
+def method_not_allowed_429(e):
     print(e)
     return Response('429: ratelimit', 429)
 
